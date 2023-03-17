@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFF4YG_cQn0Sj5LZ8IqXjx4aemkvj8pZ4&libraries=places&callback=initMap" defer></script>
     <title>Weather your Activity</title>
 </head>
-<body>
+<body onload="initMap()">
             <section class="hero is-info is-fullheight">
                 <!-- Hero head: will stick at the top -->
                 <div class="hero-head">
@@ -41,7 +42,8 @@
                   <div class="container has-text-centered is-offset">
                     
                     <p class="title">
-                      Title
+                      My Google Map
+                      <div id="map"></div>
                     </p>
                     <p class="subtitle">
                       Subtitle
@@ -57,6 +59,5 @@
                       
                
               </section>
-              <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFF4YG_cQn0Sj5LZ8IqXjx4aemkvj8pZ4&libraries=places"></script>
 </body>
 </html>

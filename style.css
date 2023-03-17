@@ -257,3 +257,9 @@ body {
     border-bottom:solid 1px transparent;
   }
   }
+
+  /* Google Map Styling begins here */
+  #map {
+    height: 400px;
+    width: 100%;
+  }
