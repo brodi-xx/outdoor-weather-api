@@ -8,8 +8,6 @@
   <body>
     <div class="container">
      <header class="">
-        <h1>Wheather Your Day</h1>
-        <nav class="navbar is-info">
           </nav>
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
@@ -71,26 +69,7 @@
               </div>
             </div>
           </nav>
-          <section id="hero">
-            <div class="container">
-              <div class="searchwrapper">
-                <div class="searchbox">
-                  <div class="row">
-                    <div class="col-md-5"><input type="text" class="form-control" placeholder="Search by Keywords..."></div>
-                    <div class="col-md-3"><input type="text" class="form-control" placeholder="Location"></div>
-                    <div class="col-md-3">
-                      <select class="form-control category">
-                        <option>Category</option>
-                        <option>Cafes</option>
-                        <option>Restauarants</option>
-                      </select>
-                    </div>
-                    <div class="col-md-1"><input type="button" class="btn btn-primary" class="form-control" value="Search"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+      
       </header>
       <section>
         <h2></h2>
@@ -110,4 +89,68 @@
       </ol>
     </div>
   </body>
+=========
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFF4YG_cQn0Sj5LZ8IqXjx4aemkvj8pZ4&libraries=places&callback=initMap" defer></script>
+    <title>Weather your Activity</title>
+</head>
+<body onload="initMap()">
+            <section class="hero is-info is-fullheight">
+                <!-- Hero head: will stick at the top -->
+                <div class="hero-head">
+                  <header class="navbar">
+                    <div class="container">
+                      <div class="navbar-brand">
+                        <a class="navbar-item">
+                            <img src="../outdoor-weather-api/assets/logo.png" width="40" height="200" alt="logo">
+                        </a>
+                      </div>
+                      <div id="navbarMenuHeroC" class="navbar-menu">
+                        <div class="navbar-end">
+                          <a class="navbar-item is-active">
+                            Home
+                          </a>
+                          <a class="navbar-item">
+                            Something
+                          </a>
+                          <a class="navbar-item">
+                            Something
+                          </a>
+                        
+                        </div>
+                      </div>
+                    </div>
+                  </header>
+                </div>
+              
+                <!-- Hero content: will be in the middle -->
+                <div class="hero-body has-background-info-dark">
+                  <div class="container has-text-centered is-offset">
+                    
+                    <p class="title">
+                      My Google Map
+                      <div id="map"></div>
+                    </p>
+                    <p class="subtitle">
+                      Subtitle
+                    </p>
+                    <div class="columns is-variable is-2">
+                        <div class="column has-background-primary">
+                          First column content
+                        </div>
+                        <div class="column has-background-black">
+                          Second column content
+                        </div>
+                      </div>
+                      
+               
+              </section>
+</body>
+>>>>>>>>> Temporary merge branch 2
 </html>
