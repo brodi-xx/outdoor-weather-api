@@ -4,8 +4,9 @@
     <title>outdoor </title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFF4YG_cQn0Sj5LZ8IqXjx4aemkvj8pZ4&libraries=places&callback=initMap" defer></script>
   </head>
-  <body>
+  <body onload="initMap()">
     <div class="container">
      <header class="">
         <h1>Wheather Your Day</h1>
@@ -109,5 +110,6 @@
         <li>Ordered List Item 3</li>
       </ol>
     </div>
+    <script src="../outdoor-weather-api/script.js"
   </body>
 </html>
