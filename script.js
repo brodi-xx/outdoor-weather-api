@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const categories = document.querySelectorAll('.category'); categories.forEach(category => { new Chosen(category, {disable_search_threshold: 10}); }); 
 console.log (categories)
 
@@ -27,3 +28,18 @@ function initMap() {
     // Handle any errors here
     console.error(error);
   }); */
+=======
+const categories = document.querySelector('.category');
+// categories.forEach(category => {
+//      new Chosen(category, {disable_search_threshold: 10}); 
+//     }); 
+const keyword = document.querySelector('#keyword');
+const location = document.querySelector('#location');
+const search = document.querySelector("#search");
+
+search.addEventListener("click", function() {
+    localStorage.setItem("keyword", keyword);
+    localStorage.setItem("location", location);
+    localStorage.setItem("category", category);
+})
+>>>>>>> 8a03009cd6ed6ef1b7a903e10eeae514c5ed0496
