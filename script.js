@@ -1,12 +1,12 @@
-const categories = document.querySelectorAll('.category'); categories.forEach(category => { new Chosen(category, {disable_search_threshold: 10}); }); 
-console.log (categories)
+// const categories = document.querySelectorAll('.category'); categories.forEach(category => { new Chosen(category, {disable_search_threshold: 10}); });
+// console.log (categories)
 
-// API Key placeholder - 
+// API Key placeholder -
 // Google API Key: AIzaSyCFF4YG_cQn0Sj5LZ8IqXjx4aemkvj8pZ4
 // <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFF4YG_cQn0Sj5LZ8IqXjx4aemkvj8pZ4&libraries=places">
 
 function initMap() {
-  // Map location options 
+  // Map location options
   var options = {
     zoom:7,
     center:{lat:19.4326,lng:-99.1332}
