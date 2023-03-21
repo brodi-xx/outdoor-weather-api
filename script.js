@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const categories = document.querySelectorAll('.category'); categories.forEach(category => { new Chosen(category, {disable_search_threshold: 10}); }); 
 console.log (categories)
 
@@ -28,18 +27,52 @@ function initMap() {
     // Handle any errors here
     console.error(error);
   }); */
-=======
-const categories = document.querySelector('.category');
-// categories.forEach(category => {
-//      new Chosen(category, {disable_search_threshold: 10}); 
-//     }); 
-const keyword = document.querySelector('#keyword');
-const location = document.querySelector('#location');
-const search = document.querySelector("#search");
 
-search.addEventListener("click", function() {
-    localStorage.setItem("keyword", keyword);
-    localStorage.setItem("location", location);
-    localStorage.setItem("category", category);
-})
->>>>>>> 8a03009cd6ed6ef1b7a903e10eeae514c5ed0496
+  //weather api url plus search function for city
+
+  let weather = {
+    apiKey: "eda74b25c0c08d1b90225737438fad5c",
+    fetchWeather: function (city) {
+      fetch(
+        "https://api.openweathermap.org/data/2.5/weather?q=" +
+          city +
+          "&units=imperial&appid=" +
+          this.apiKey
+      )
+    //alert if no location found with alert
+
+        .then((response) => {
+          if (!response.ok) {
+            alert("No weather found.");
+            throw new Error("No weather found.");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          this.displayWeather(data);
+          // Save the last searched city in local storage
+          localStorage.setItem("lastCity", city);
+        });
+    },
+    displayWeather: function (data) {
+      const { name } = data;
+      const { icon, description } = data.weather[0];
+      const { temp, humidity } = data.main;
+      const { speed } = data.wind;
+      document.querySelector(".city").innerText = "Weather in " + name;
+      document.querySelector(".icon").src =
+        "https://openweathermap.org/img/wn/" + icon + ".png";
+      document.querySelector(".description").innerText = description;
+      document.querySelector(".temp").innerText = Math.round(temp) + "°F";
+      document.querySelector(".humidity").innerText =
+        "Humidity: " + humidity + "%";
+      document.querySelector(".wind").innerText =
+        "Wind: " + Math.round(speed) + " mph";
+      document.querySelector(".weather").classList.remove("loading");
+      document.body.style.backgroundImage =
+        "url('https://source.unsplash.com/1600x900/?wallpaper')";
+    },
+    search: function () {
+      this.fetchWeather(document.querySelector(".search-bar").value);
+    },
+  };
