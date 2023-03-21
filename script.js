@@ -76,3 +76,4 @@ function initMap() {
       this.fetchWeather(document.querySelector(".search-bar").value);
     },
   };
+  
