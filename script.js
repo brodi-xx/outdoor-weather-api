@@ -77,3 +77,20 @@ function initMap() {
     },
   };
   
+// Load the last searched city from local storage
+const lastCity = localStorage.getItem("lastCity");
+if (lastCity) {
+  weather.fetchWeather(lastCity);
+} else {
+  weather.fetchWeather("Austin"); // Default city
+}
+//click function for searching location
+document.querySelector(".search button").addEventListener("click", function () {
+  weather.search();
+});
+//enter function for searching
+document.querySelector(".search-bar").addEventListener("keyup", function (event) {
+  if (event.key == "Enter") {
+    weather.search();
+  }
+});
