@@ -1,0 +1,28 @@
+
+.columns--main-content {
+    border: 3px dotted green;
+  }
+  
+  .column--main-content {
+    border: 3px dotted salmon;
+  }
+  
+  .header {
+    background-color: lightgrey;
+    height: 20vh;
+  }
+  
+  .aside {
+    background-color: salmon;
+    height: 100vh;
+  }
+  
+  .no-padding-right {  
+     align-items: right; 
+  }
+  
+  .main-content {
+    width: 100%;  
+    background-color: green;
+    height: 70vh;  
+  }
