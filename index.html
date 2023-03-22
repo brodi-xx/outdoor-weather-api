@@ -1,102 +1,118 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>outdoor </title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFF4YG_cQn0Sj5LZ8IqXjx4aemkvj8pZ4&libraries=places&callback=initMap" defer></script>
+    <title>outdoor</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFF4YG_cQn0Sj5LZ8IqXjx4aemkvj8pZ4&libraries=places&callback=initMap"
+      defer
+    ></script>
   </head>
   <body>
     <div class="container">
-     <header class="">
+      <header class="">
         <h1></h1>
         <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="https://bulma.io">
-                    <img src="./mini_mountain_pic.png" width= 80px height= 178px>
+          <div class="navbar-brand">
+            <a class="navbar-item" href="https://bulma.io">
+              <img src="./mini_mountain_pic.png" width="80px" height="178px" />
+            </a>
+
+            <a
+              role="button"
+              class="navbar-burger"
+              aria-label="menu"
+              aria-expanded="false"
+              data-target="navbarBasicExample"
+            >
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+
+          <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+              <a class="navbar-item"> Home </a>
+
+              <a class="navbar-item"> Documentation </a>
+
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link"> More </a>
+
+                <div class="navbar-dropdown">
+                  <a class="navbar-item"> About </a>
+                  <a class="navbar-item"> Jobs </a>
+                  <a class="navbar-item"> Contact </a>
+                  <hr class="navbar-divider" />
+                  <a class="navbar-item"> Report an issue </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="navbar-end">
+              <div class="navbar-item">
+                <div class="buttons">
+                  <a class="button is-primary">
+                    <strong>Sign up</strong>
                   </a>
-
-              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-              </a>
-            </div>
-
-            <div id="navbarBasicExample" class="navbar-menu">
-              <div class="navbar-start">
-                <a class="navbar-item">
-                  Home
-                </a>
-
-                <a class="navbar-item">
-                  Documentation
-                </a>
-
-                <div class="navbar-item has-dropdown is-hoverable">
-                  <a class="navbar-link">
-                    More
-                  </a>
-
-                  <div class="navbar-dropdown">
-                    <a class="navbar-item">
-                      About
-                    </a>
-                    <a class="navbar-item">
-                      Jobs
-                    </a>
-                    <a class="navbar-item">
-                      Contact
-                    </a>
-                    <hr class="navbar-divider">
-                    <a class="navbar-item">
-                      Report an issue
-                    </a>
-                  </div>
+                  <a class="button is-light"> Log in </a>
                 </div>
               </div>
-
-              <div class="navbar-end">
-                <div class="navbar-item">
-                  <div class="buttons">
-                    <a class="button is-primary">
-                      <strong>Sign up</strong>
-                    </a>
-                    <a class="button is-light">
-                      Log in
-                    </a>
+            </div>
+          </div>
+        </nav>
+        <section id="hero">
+          <div class="container">
+            <div class="searchwrapper">
+              <div class="searchbox">
+                <div class="row">
+                  <div class="col-md-5">
+                    <input
+                      id="keywords"
+                      type="text"
+                      class="form-control"
+                      placeholder="Search by Keywords..."
+                    />
+                  </div>
+                  <div class="col-md-3">
+                    <input
+                      id="location"
+                      type="text"
+                      class="form-control"
+                      placeholder="Location"
+                    />
+                  </div>
+                  <div class="col-md-3">
+                    <select class="form-control category">
+                      <option>Activity</option>
+                      <option>indoor</option>
+                      <option>outdoor</option>
+                    </select>
+                  </div>
+                  <div class="col-md-1">
+                    <button
+                      id="search"
+                      type="button"
+                      class="btn btn-primary"
+                      class="form-control"
+                      value="Search" onclick="window.location.href='./mappage.html'">Search
+                  </button>
                   </div>
                 </div>
               </div>
             </div>
-          </nav>
-          <section id="hero">
-            <div class="container">
-              <div class="searchwrapper">
-                <div class="searchbox">
-                  <div class="row">
-                    <div class="col-md-5"><input id="keywords" type="text" class="form-control" placeholder="Search by Keywords..."></div>
-                    <div class="col-md-3"><input id="location" type="text" class="form-control" placeholder="Location"></div>
-                    <div class="col-md-3">
-                      <select class="form-control category">
-                        <option>Activity</option>
-                        <option>indoor</option>
-                        <option>outdoor</option>
-                      </select>
-                    </div>
-                    <div class="col-md-1"><input id="search" type="button" class="btn btn-primary" class="form-control" value="Search"></div>
-                    <button ></button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-          </section>
+          </div>
+        </section>
       </header>
     </div>
     <!-- Link first JS file -->
-    <script src = "./script.js"></script>
+    <script src="./script.js"></script>
     <!-- Link second JS file  -->
-    <script src="./practicescript.js"> </script>
+    <script src="./practicescript.js"></script>
   </body>
 </html>
