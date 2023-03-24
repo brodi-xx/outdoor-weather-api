@@ -1,96 +1,87 @@
-// const categories = document.querySelectorAll('.category'); categories.forEach(category => { new Chosen(category, {disable_search_threshold: 10}); });
-// console.log (categories)
+// Get references to the DOM elements
+const keywordsInput = document.getElementById('keywords');
+const categorySelect = document. querySelector('.category')
+const searchBtn = document.getElementById('search');
+const keywords = keywordsInput.value.trim();
+let category = categorySelect.value.toLowerCase();
 
-// API Key placeholder -
-// Google API Key: AIzaSyCFF4YG_cQn0Sj5LZ8IqXjx4aemkvj8pZ4
-// <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFF4YG_cQn0Sj5LZ8IqXjx4aemkvj8pZ4&libraries=places">
+
+//  API endpoint URL
+const baseUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
+const apiKey = "eda74b25c0c08d1b90225737438fad5c"; //window.locationName -> restricted keyword
+
+
+// Add event listener to the search button
+searchBtn.addEventListener('click', () => {
+  // Get the user's input
+  let locationName = document.getElementById('location').value;
+  console.log('loc valu', locationName)
+  const endpointUrl = `${baseUrl}${locationName}&appid=${apiKey}`;
+
+  // keywords = document.getElementById('keywords').value;
+  // const category = document.querySelector('.category').value;
+  // Build the API URL based on the user's input
+  // Make an HTTP request to the API using the Fetch API
+  fetch(endpointUrl)
+    .then(response => response.json())
+    .then(data => {
+      // Process the API response data
+      const weatherDescription = data.weather[0].description;
+      const temperature = data.main.temp;
+      // const locationNameName = data.name;
+      // Display the weather information on the page
+      const weatherInfo = `The weather in ${locationName} is currently ${weatherDescription} with a temperature of ${temperature} Kelvin.`;
+      document.getElementById('weather-info').textContent = weatherInfo;
+    })
+    .catch(error => {
+      // Handle any errors that occur during the API request
+      console.error('Error:', error);
+    });
+
+  // Fetch weather data from API
+  fetch(endpointUrl)
+    .then(response => response.json())
+    .then(data => {
+      // Check if locationName is valid
+      if (data.cod === '404') {
+        console.log('locationName not found');
+        return;
+      }
+      // Get weather information
+      const weather = data.weather[0].main.toLowerCase();
+      // Check if weather is suitable for selected activity category
+      if ((category === 'indoor' && weather !== 'rain' && weather !== 'snow') ||
+          (category === 'outdoor' && weather === 'clear')) {
+        console.log(`Weather is suitable for ${category} activity`);
+      } else {
+        console.log(`Weather is not suitable for ${category} activity`);
+      }
+    })
+    .catch(error => console.log(error));
+});
 
 function initMap() {
-  // Map location options
+  // Map locationName options
   var options = {
     zoom:7,
     center:{lat:19.4326,lng:-99.1332}
   }
-
   // New Map
   var map = new google.maps.Map(document.getElementById('map'), options);
 }
 
-
-/*fetch('https://maps.googleapis.com/maps/api/js?key=AIzaSyCFF4YG_cQn0Sj5LZ8IqXjx4aemkvj8pZ4&libraries=places')
-  .then(response => response.json())
-  .then(data => {
-    // Handle the response data here
-    console.log(data);
-  })
-  .catch(error => {
-    // Handle any errors here
-    console.error(error);
-  }); */
-
-  //weather api url plus search function for city
-
-  let weather = {
-    apiKey: "eda74b25c0c08d1b90225737438fad5c",
-    fetchWeather: function (city) {
-      fetch(
-        "https://api.openweathermap.org/data/2.5/weather?q=" +
-          city +
-          "&units=imperial&appid=" +
-          this.apiKey
-      )
-    //alert if no location found with alert
-
-        .then((response) => {
-          if (!response.ok) {
-            alert("No weather found.");
-            throw new Error("No weather found.");
-          }
-          return response.json();
-        })
-        .then((data) => {
-          this.displayWeather(data);
-          // Save the last searched city in local storage
-          localStorage.setItem("lastCity", city);
-        });
-    },
-    displayWeather: function (data) {
-      const { name } = data;
-      const { icon, description } = data.weather[0];
-      const { temp, humidity } = data.main;
-      const { speed } = data.wind;
-      document.querySelector(".city").innerText = "Weather in " + name;
-      document.querySelector(".icon").src =
-        "https://openweathermap.org/img/wn/" + icon + ".png";
-      document.querySelector(".description").innerText = description;
-      document.querySelector(".temp").innerText = Math.round(temp) + "°F";
-      document.querySelector(".humidity").innerText =
-        "Humidity: " + humidity + "%";
-      document.querySelector(".wind").innerText =
-        "Wind: " + Math.round(speed) + " mph";
-      document.querySelector(".weather").classList.remove("loading");
-      document.body.style.backgroundImage =
-        "url('https://source.unsplash.com/1600x900/?wallpaper')";
-    },
-    search: function () {
-      this.fetchWeather(document.querySelector(".search-bar").value);
-    },
-  };
-  
-// Load the last searched city from local storage
-const lastCity = localStorage.getItem("lastCity");
-if (lastCity) {
-  weather.fetchWeather(lastCity);
-} else {
-  weather.fetchWeather("Austin"); // Default city
-}
-//click function for searching location
-document.querySelector(".search button").addEventListener("click", function () {
-  weather.search();
+// Create the search box and link it to the UI element.
+const input = document.getElementById("pac-input");
+const searchBox = new google.maps.places.SearchBox(input);
+map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+// Bias the SearchBox results towards current map's viewport.
+map.addListener("bounds_changed", () => {
+  searchBox.setBounds(map.getBounds());
 });
-//enter function for searching
-document.querySelector(".search-bar").addEventListener("keyup", function (event) {
-  if (event.key == "Enter") {
-    weather.search();
-  }
+map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+// Bias the SearchBox results towards current map's viewport.
+map.addListener("bounds_changed", () => {
+  searchBox.setBounds(map.getBounds());
 });
+
+initMap();
