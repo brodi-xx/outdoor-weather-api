@@ -21,7 +21,7 @@ Use modals instead of alerts, confirms, or prompts.
 Use client-side storage to store persistent data.
 
 ## PRESENTATION INSTRUCTIONS
-Presentation TemplateLinks to an external site. to address the following:
+Presentation Link:
 
 Elevator pitch: A one-minute description of your application.
 
@@ -29,11 +29,7 @@ Concept: What is your user story? What was your motivation for development?
 
 Process: What were the technologies used? How were tasks and roles broken down and assigned? What challenges did you encounter? What were your successes?
 
-Demo: Show your stuff!
-
 Directions for future development.
-
-Links to the deployed application and the GitHub repository.
 
 ## REQUIREMENTS
 Satisfies all of the preceding acceptance criteria plus the following code improvements:

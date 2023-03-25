@@ -1,22 +1,21 @@
 // Get references to the DOM elements
 const keywordsInput = document.getElementById('keywords');
-const categorySelect = document. querySelector('.category')
+const categorySelect = document.querySelector('.category');
 const searchBtn = document.getElementById('search');
 const keywords = keywordsInput.value.trim();
 let category = categorySelect.value.toLowerCase();
 
-
 //  API endpoint URL
 const baseUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
 const apiKey = "eda74b25c0c08d1b90225737438fad5c"; //window.locationName -> restricted keyword
-
+let iconcode;
 
 // Add event listener to the search button
 searchBtn.addEventListener('click', () => {
   // Get the user's input
   let locationName = document.getElementById('location').value;
   console.log('loc valu', locationName)
-  const endpointUrl = `${baseUrl}${locationName}&appid=${apiKey}`;
+  const endpointUrl = `${baseUrl}${locationName}&units=imperial&appid=${apiKey}`;
 
   // keywords = document.getElementById('keywords').value;
   // const category = document.querySelector('.category').value;
@@ -25,13 +24,20 @@ searchBtn.addEventListener('click', () => {
   fetch(endpointUrl)
     .then(response => response.json())
     .then(data => {
+      console.log ("data",data);
       // Process the API response data
       const weatherDescription = data.weather[0].description;
       const temperature = data.main.temp;
+      iconcode = data.weather[0].icon;
+      console.log ("icon",iconcode)
+      const iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+      console.log ("iconUrl",iconurl)
       // const locationNameName = data.name;
       // Display the weather information on the page
-      const weatherInfo = `The weather in ${locationName} is currently ${weatherDescription} with a temperature of ${temperature} Kelvin.`;
+      const weatherInfo = `The weather in ${locationName} is currently ${weatherDescription} with a temperature of ${temperature} F.`;
       document.getElementById('weather-info').textContent = weatherInfo;
+      $('#wicon').attr('src', iconurl);
+      $("div#icon").show();
     })
     .catch(error => {
       // Handle any errors that occur during the API request
@@ -68,7 +74,6 @@ function initMap() {
   }
   // New Map
   var map = new google.maps.Map(document.getElementById('map'), options);
-}
 
 // Create the search box and link it to the UI element.
 const input = document.getElementById("pac-input");
@@ -83,5 +88,7 @@ map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 map.addListener("bounds_changed", () => {
   searchBox.setBounds(map.getBounds());
 });
+}
+
 
 initMap();
