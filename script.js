@@ -1,19 +1,29 @@
 // Get references to the DOM elements
 const keywordsInput = document.getElementById('keywords');
 const categorySelect = document.querySelector('.category');
+const searchHistory = document.querySelector('#locationNames');
 const searchBtn = document.getElementById('search');
 const keywords = keywordsInput.value.trim();
 let category = categorySelect.value.toLowerCase();
+let modal = document.getElementById("myModal");
+let closeButton = document.getElementById("close");
 
 //  API endpoint URL
 const baseUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
 const apiKey = "eda74b25c0c08d1b90225737438fad5c"; //window.locationName -> restricted keyword
 let iconcode;
 
+
 // Add event listener to the search button
 searchBtn.addEventListener('click', () => {
-  // Get the user's input
+  // Add local storage for Location
   let locationName = document.getElementById('location').value;
+  localStorage.setItem("location", locationName);
+  let locationData = document.createElement("div");
+  locationData.innerHTML = localStorage.getItem("location");
+  searchHistory.appendChild(locationData);
+  
+  // Get the user's input
   console.log('loc valu', locationName)
   const endpointUrl = `${baseUrl}${locationName}&units=imperial&appid=${apiKey}`;
 
@@ -51,6 +61,7 @@ searchBtn.addEventListener('click', () => {
       // Check if locationName is valid
       if (data.cod === '404') {
         console.log('locationName not found');
+        modal.style.display = "block";
         return;
       }
       // Get weather information
@@ -89,6 +100,10 @@ map.addListener("bounds_changed", () => {
   searchBox.setBounds(map.getBounds());
 });
 }
+
+closeButton.addEventListener("click", () => {
+  modal.style.display = "none";
+});
 
 
 initMap();

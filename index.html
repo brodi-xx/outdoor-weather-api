@@ -55,6 +55,13 @@
           </div>
         </nav>
         <section id="hero">
+          <!-- modal to show invalid search -->
+          <div id="myModal" class="modal">
+            <div class="modal-content">
+              <span id="close">X</span>
+              <p>Please enter a valid city name.</p>
+            </div>
+          </div>
           <div class="container">
             <div class="searchwrapper">
               <div class="searchbox">
@@ -93,6 +100,8 @@
                   </div>
                 </div>
                 <div id="weather-info"></div>
+                <!-- to display search history -->
+                <div id="locationNames"></div>
                 <div id="icon" style="display:none;"><img id="wicon" src="" alt="Weather icon"></div>
               </div>
             </div>
