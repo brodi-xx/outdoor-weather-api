@@ -47,4 +47,4 @@ Application loads with no errors.
 ## Notes
 Live link
 
-Image Screen Shot:
+Image Screen Shot: 
