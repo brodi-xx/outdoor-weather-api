@@ -8,7 +8,7 @@ body {
   .container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px;
     background-color: rgba(0,0,0,0);
   }
   
@@ -41,12 +41,12 @@ body {
 /*search bar code here*/
 
   body {
-    background-color: rgba(0,0,0,0.9);
-    background-image: url(./mountain\ pic\ for\ project.png);
-    background-size:cover;
-    background-position:center 30%;
+    background-color: rgba(255, 255, 255, 0.9);
+    background-image: url(./assets/images/mountain\ pic\ for\ \ 2updated\ PNG.png);
+    background-size: 100rem;
+    background-position:center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: scroll;
   }
   #hero { 
     background-color:rgba(0,0,0,0); 
@@ -60,6 +60,11 @@ body {
     background-color:#fff;
     padding: 10px 76px 10px 40px;
     border-radius: 50px;
+    margin-top: -50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
   .searchbox [class*="col-"] {
     padding: 0px;
@@ -68,6 +73,12 @@ body {
     padding-top: 12px; 
     padding-bottom: 12px;
   }
+
+  .row {
+display: flex;
+flex-direction: row;
+  }
+
   .searchbox .form-control {
     border-color: transparent;
     border-right:solid 1px rgba(0,0,0,0.10);
@@ -263,3 +274,31 @@ body {
     height: 400px;
     width: 100%;
   }
+
+  .modal {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #baadad;
+    width: 70%; 
+  }
+  
+  #close {
+    color: #767070;
+    float: right;
+    font-size: 25px;
+  }
+  
+  #close:hover,
+  #close:focus {
+    color: black;
+    cursor: pointer;
+  }
+  

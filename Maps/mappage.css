@@ -1,0 +1,38 @@
+
+.columns--main-content {
+    border: 3px dotted green;
+  }
+  
+  .column--main-content {
+    border: 3px dotted salmon;
+  }
+  
+  .header {
+    background:#3a18b52b ;
+    height: 20vh;
+    border-radius: 60px;
+    margin-bottom: 30px;
+    font-size: 84px;
+    text-align: center;
+    
+  }
+  
+  .aside {
+    background: #3a18b52b;
+    height: 100vh;
+    border-radius: 50px;
+    margin-top: 27px;
+  }
+  
+  .no-padding-right {  
+     align-items: right; 
+  }
+  
+  .main-content {
+    width: 100%;  
+    background: #3a18b52b;
+    height: 70vh;  
+    border-radius: 50px;
+  }
+
+  
