@@ -3,20 +3,8 @@ PROJECT 1- Weather Your Day!
 ## DESCRIPTION
 This is an important step in your full-stack journey as you will now use your newly acquired skills and knowledge to build web application from scratch. With your team, you will conceive and execute a design that solves a real-world problem by integrating data received from multiple server-side API requests. Because you will be working collaboratively, you will learn agile development methodologies and implement feature and bug fixes using the git branch workflow and pull requests.
 
-## INSTRUCTIONS
-With your team, you'll conceive and execute a design that solves a real-world problem by integrating data received from multiple server-side API requests. You'll also learn about agile development methodologies to help you work collaboratively. You'll implement feature and bug fixes using Git branch workflow and pull requests.
+## USER STORY
 
-You'll write your own user stories and acceptance criteria in GitHub Issues to help your team stay on track with the project. Using GitHub Project to track the status of your project tasks will help you understand the benefits of Kanban boards.
-
-Use a CSS framework other than Bootstrap.
-
-Be interactive (in other words, accept and respond to user input).
-
-Use at least two server-side APIsLinks to an external site..
-
-Use modals instead of alerts, confirms, or prompts.
-
-Use client-side storage to store persistent data.
 
 ## PRESENTATION INSTRUCTIONS
 Presentation Link:
@@ -29,7 +17,7 @@ Process: What were the technologies used? How were tasks and roles broken down a
 
 Directions for future development.
 
-## REQUIREMENTS
+## PROJECT REQUIREMENTS
 The user story and acceptance criteria will depend on the project that you create, but your project must fulfil the following requirements:
 
 Use a CSS framework other than Bootstrap.
