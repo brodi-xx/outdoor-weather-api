@@ -171,4 +171,4 @@ closeButton.addEventListener("click", () => {
 
 // initMap();
 
-// Erica's latest version 3/27 @ 4:00PM
+// Erica's latest version 3/27 @ 4:30PM

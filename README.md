@@ -8,8 +8,6 @@ With your team, you'll conceive and execute a design that solves a real-world pr
 
 You'll write your own user stories and acceptance criteria in GitHub Issues to help your team stay on track with the project. Using GitHub Project to track the status of your project tasks will help you understand the benefits of Kanban boards.
 
-You and your group will use everything you’ve learned over the past six modules to create a real-world front-end application that you’ll be able to showcase to potential employers. The user story and acceptance criteria will depend on the project that you create, but your project must fulfill the following requirements:
-
 Use a CSS framework other than Bootstrap.
 
 Be interactive (in other words, accept and respond to user input).
@@ -32,19 +30,29 @@ Process: What were the technologies used? How were tasks and roles broken down a
 Directions for future development.
 
 ## REQUIREMENTS
-Satisfies all of the preceding acceptance criteria plus the following code improvements:
+The user story and acceptance criteria will depend on the project that you create, but your project must fulfil the following requirements:
 
-Application's links all function correctly.
+Use a CSS framework other than Bootstrap.
 
-Application's CSS selectors and properties are consolidated and organized to follow semantic structure.
+Be deployed to GitHub Pages.
 
-Application's CSS file is properly commented.
+Be interactive (i.e., accept and respond to user input).
 
-Application deployed at live URL.
+Use at least two server-side APIs.
 
-Application loads with no errors.
+Does not use alerts, confirms, or prompts (use modals).
+
+Use client-side storage to store persistent data.
+
+Be responsive.
+
+Have a polished UI.
+
+Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
+
+Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
 ## Notes
 Live link
 
-Image Screen Shot: 
+Image Screen Shot:  ![On a desktop, image displays finished project](./assets/images/ReadMeImage.png)
