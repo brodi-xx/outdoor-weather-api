@@ -41,6 +41,6 @@ Have a clean repository that meets quality coding standards (file structure, nam
 Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
 ## Notes
-Live link
+Live link: https://brodi-xx.github.io/outdoor-weather-api/
 
 Image Screen Shot:  ![On a desktop, image displays finished project](./assets/images/ReadMeImage.png)
