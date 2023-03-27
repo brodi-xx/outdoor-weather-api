@@ -7,7 +7,7 @@ This is an important step in your full-stack journey as you will now use your ne
 As a user, I want to be able to search for an activity in a specific location to see where I can go to do said activity and get a weather update for that area
 
 ## PRESENTATION INSTRUCTIONS
-Presentation Link:
+<a href="https://brodi-xx.github.io/outdoor-weather-api/">Presentation Link</a>
 
 Elevator pitch: A one-minute description of your application.
 
